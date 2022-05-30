@@ -22,7 +22,7 @@ const SearchBook = () => {
           <input type='text' placeholder='Search by title or author' />
         </div>
       </div>
-      
+
       <div className='search-books-results'>
         <ol className='books-grid' />
       </div>

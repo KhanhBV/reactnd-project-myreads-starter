@@ -1,8 +1,17 @@
 import React from "react";
 
-const ShelfSelelect = () => {
+const ShelfSelelect = (props) => {
+  const { book, shelf, selectShelf } = props;
+
+  const handleSelectShelf = (e) => {
+    const title = e.target.value;
+    if (title !== "none") {
+      selectShelf(book, title);
+    }
+  };
+
   return (
-    <select>
+    <select defaultValue={shelf.id} onChange={(e) => handleSelectShelf(e)}>
       <option value='move' disabled>
         Move to...
       </option>
