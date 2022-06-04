@@ -4,8 +4,7 @@ import ShelfSelelect from './ShelfSelelect';
 const Book = (props) => {
   const { book, selectShelf } = props;
   const { imageLinks, title, authors } = book;
-  console.log('book', book);
-
+  
   return (
     <div className='book'>
       <div className='book-top'>
@@ -25,9 +24,7 @@ const Book = (props) => {
       <div className='book-authors'>
         { 
         authors && authors.length > 0
-        ? authors.map((author, index) =>
-          authors.length - 1 === index ? author : `${author}, `
-        )
+        ? authors.join(', ')
         : ''
       }
       </div>
